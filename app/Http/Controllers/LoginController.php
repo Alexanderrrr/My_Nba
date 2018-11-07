@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'logout']);
+    }
     public function show()
     {
         return view('login.index');
@@ -19,8 +23,6 @@ class LoginController extends Controller
                      'message' => 'Wrong email or password',
                  ]);
       }
-
-
       return redirect('/teams');
     }
 
