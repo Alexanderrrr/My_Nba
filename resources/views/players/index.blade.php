@@ -1,4 +1,7 @@
 @extends('master')
+@section('title')
+  {{ $player->first_name }} {{ $player->last_name }}
+@endsection
 @section('content')
   <h1>Player: {{ $player->first_name }} {{ $player->last_name }}</h1>
   <ul>

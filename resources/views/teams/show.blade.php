@@ -1,4 +1,8 @@
 @extends('master')
+@section('title')
+  {{ $team->name }}
+@endsection
+
 @section('content')
   <h1>Nba Single Team : {{ $team->name }}</h1>
   <ul>

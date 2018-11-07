@@ -13,3 +13,13 @@
   </nav>
 </div>
 @endsection
+@section('comments')
+<strong class="d-inline-block mb-2 text-success">All Comments</strong>
+<h3 class="mb-0">
+  <a class="text-dark" href="#">Comment</a>
+</h3>
+@foreach($comments as $comment)
+<div class="mb-1 text-muted">created at {{ $comment->created_at }}</div>
+<p class="card-text mb-auto">{{ $comment->content }}</p>
+@endforeach
+@endsection

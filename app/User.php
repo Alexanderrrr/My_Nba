@@ -34,4 +34,9 @@ class User extends Authenticatable
       'password' => 'required|confirmed',
       'password_confirmation'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
