@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::get('/teams', 'TeamsController@index');
 Route::get('/teams/{teamId}', 'TeamsController@show');
 Route::get('/players/{playerId}', 'PlayersController@index');
+
+Route::get('/register', 'RegisterController@show');
+Route::post('/register', 'RegisterController@store');
+
+Route::get('/login', 'LoginController@show');
+Route::post('/login', 'LoginController@create');
+Route::get('/logout', 'LoginController@logout');

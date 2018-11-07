@@ -25,13 +25,13 @@
         @include('partials.header')
       </header>
 
-         @yield('teams')
 
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
             @yield('content')
         </div>
       </div>
+      @yield('teams')
 
       <div class="row mb-2">
             @yield('players_array')

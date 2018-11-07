@@ -1,8 +1,10 @@
 
 
   <div class=" justify-content-end align-items-center">
-    <a class="btn btn-sm btn-outline-secondary" href="#">Login</a>
-    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-    <a class="btn btn-sm btn-outline-secondary" href="#">Logout</a>
-
+    @if(auth()->check())
+        <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
+    @else
+        <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
+        <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
+    @endif
   </div>

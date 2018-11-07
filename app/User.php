@@ -27,4 +27,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    const VALIDATION_RULES = [
+      'name' => 'required',
+      'email' => 'required',
+      'password' => 'required|confirmed',
+      'password_confirmation'
+    ];
 }
