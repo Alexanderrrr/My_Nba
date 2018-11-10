@@ -16,7 +16,7 @@ class TeamsController extends Controller
     public function index()
     {
         $teams = Team::all();
-        $comments = Comment::all();
+        $comments = Comment::latest()->paginate(5);
         return view('teams.index', ['teams' => $teams, 'comments' => $comments]);
     }
 

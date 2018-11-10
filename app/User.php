@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     const VALIDATION_RULES = [
       'name' => 'required',
-      'email' => 'required',
+      'email' => 'required|email|unique:users',
       'password' => 'required|confirmed',
       'password_confirmation'
     ];

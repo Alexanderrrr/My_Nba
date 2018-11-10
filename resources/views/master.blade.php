@@ -23,31 +23,35 @@
     <div class="container">
       <header class="blog-header py-3">
         @include('partials.header')
+        @if(auth()->check())
+        <h2>Hello, {{ auth()->user()->name }}</h2>
+        <hr/>
+        @endif
+        @if($flash = session('message'))
+            <div class="alert alert-success">
+                {{ $flash }}
+            </div>
+        @endif
       </header>
 
 
-      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            @yield('content')
-        </div>
-      </div>
+      @yield('content')
+
       @yield('teams')
 
       <div class="row mb-2">
             @yield('players_array')
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
+        <div class="col-md-4">
                 @yield('comments')
             </div>
           </div>
-        </div>
-      </div>
     </div>
 
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
+          @if(auth()->check())
+
           <h3 class="pb-3 mb-4 font-italic border-bottom">
             From the Firehose
           </h3>
@@ -71,9 +75,10 @@
 
         </div><!-- /.blog-main -->
 
-        <aside class="col-md-4 blog-sidebar">
+        <aside class="col-md-2 blog-sidebar">
             @include('partials.sidebar')
         </aside><!-- /.blog-sidebar -->
+        @endif
 
       </div><!-- /.row -->
 

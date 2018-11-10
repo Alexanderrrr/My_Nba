@@ -22,6 +22,7 @@ Route::get('/players/{playerId}', 'PlayersController@index');
 Route::get('/register', 'RegisterController@show');
 Route::post('/register', 'RegisterController@store');
 
-Route::get('/login', 'LoginController@show')->middleware('guest');
-Route::post('/login', 'LoginController@create');
+Route::get('/login', 'LoginController@show')->name('login');
+Route::post('/login', 'LoginController@create')->middleware('is_verified');
 Route::get('/logout', 'LoginController@logout');
+ Route::get('/verifie/{secret_code}' , 'RegisterController@verifie');

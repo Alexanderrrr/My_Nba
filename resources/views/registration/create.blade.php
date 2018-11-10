@@ -4,6 +4,8 @@
 @endsection
 @section('content')
 
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
       <form class="form-signin" method="POST" action="/register">
 
         {{ csrf_field() }}
@@ -26,5 +28,6 @@
         @include('partials.error_messagge', ['field' => 'password_confirmation']) <!-- gadjamo name od inputa -->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       </form>
-
+    </div>
+  </div>
 @endsection

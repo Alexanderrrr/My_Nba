@@ -4,12 +4,16 @@
 @endsection
 
 @section('content')
-  <h1>Nba Single Team : {{ $team->name }}</h1>
-  <ul>
-    <li>Email: {{ $team->email }}</li>
-    <li>Address : {{ $team->adress }}</li>
-    <li>City : {{ $team->city }}</li>
-  </ul>
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+  <div class="col-md-6 px-0">
+      <h1>Nba Single Team : {{ $team->name }}</h1>
+      <ul>
+        <li>Email: {{ $team->email }}</li>
+        <li>Address : {{ $team->adress }}</li>
+        <li>City : {{ $team->city }}</li>
+      </ul>
+    </div>
+  </div>
 @endsection
 @section('players_array')
 <div class="col-md-6">
