@@ -41,7 +41,7 @@
 
       <div class="row mb-2">
             @yield('players_array')
-        <div class="col-md-4">
+        <div class="col-md-8">
                 @yield('comments')
             </div>
           </div>

@@ -40,7 +40,13 @@ class RegisterController extends Controller
     public function verifie($secret_code)
     {
         $user = User::where('verification_code', request('secret_code'));
-        $user->update(['verification_code' => null, 'email_verified_at' => now(), 'is_verified' => 1]);
-        return redirect('/login')->with('message', 'You are verified. Sign in now');
+        $user->update([
+          'verification_code' => null,
+           'email_verified_at' => now(),
+            'is_verified' => 1
+        ]);
+        session()->flash('message', 'Your account is verified now');
+       return redirect('/login');//->with('message', 'You are verified. Sign in now');
+
     }
 }

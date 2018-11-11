@@ -30,5 +30,14 @@
       @endforeach
     </div>
   </div>
+  <form class="form-signin" method="POST" action="/comment/{{ $team->id }}">
+
+    {{ csrf_field() }}
+
+    <h1 class="h3 mb-3 font-weight-normal">Type your comment</h1>
+
+    <textarea name="comment" rows="8" cols="57"></textarea>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Publish Comment</button>
+  </form>
 </div>
 @endsection

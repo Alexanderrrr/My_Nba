@@ -25,4 +25,7 @@ Route::post('/register', 'RegisterController@store');
 Route::get('/login', 'LoginController@show')->name('login');
 Route::post('/login', 'LoginController@create')->middleware('is_verified');
 Route::get('/logout', 'LoginController@logout');
- Route::get('/verifie/{secret_code}' , 'RegisterController@verifie');
+Route::get('/verifie/{secret_code}' , 'RegisterController@verifie');
+
+Route::post('/comment/{teamId}' , 'CommentsController@store');//->middleware('forbidden_words_in_comment');
+Route::get('/forbidden-comment', 'CommentsController@index');
