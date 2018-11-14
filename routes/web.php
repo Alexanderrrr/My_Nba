@@ -29,3 +29,6 @@ Route::get('/verifie/{secret_code}' , 'RegisterController@verifie');
 
 Route::post('/comment/{teamId}' , 'CommentsController@store');//->middleware('forbidden_words_in_comment');
 Route::get('/forbidden-comment', 'CommentsController@index');
+
+Route::get('/news', 'NewsController@index');
+Route::get('/news/{id}', 'NewsController@show');
