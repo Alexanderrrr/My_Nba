@@ -3,7 +3,11 @@
     News
 @endsection
 @section('news')
-
+<nav class="blog-pagination">
+  <a class="btn btn-outline-{{ $news->currentPage() == 1 ? 'secondary disabled': 'primary' }}" href="{{ $news->previousPageUrl() }}">Older</a>
+  <a class="btn btn-outline-{{ $news->hasMorePages() ? 'primary' : 'secondary disabled' }}" href="{{ $news->nextPageUrl() }}">Newer</a>
+Page  {{  $news->currentPage() }} of {{ $news->lastPage() }}
+</nav>
           <h3 class="pb-3 mb-4 font-italic border-bottom">
             All newes
           </h3>

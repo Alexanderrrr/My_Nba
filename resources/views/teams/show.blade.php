@@ -30,6 +30,16 @@
       @endforeach
     </div>
   </div>
+  @section('news')
+  @foreach($team->news as $news)
+    <div class="blog-post">
+      <h2 class="blog-post-title">{{ $news->title }}</h2>
+      <p class="blog-post-meta">{{ $news->created_at }} by <a href="#">{{ $news->user->name }}</a></p>
+
+      <p>{{ $news->content }}</p>
+    </div><!-- /.blog-post -->
+  @endforeach
+  @endsection
   <form class="form-signin" method="POST" action="/comment/{{ $team->id }}">
 
     {{ csrf_field() }}

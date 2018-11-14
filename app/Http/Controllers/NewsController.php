@@ -12,13 +12,13 @@ class NewsController extends Controller
     }
     public function index()
     {
-        $news = News::paginate(4);
+        $news = News::latest()->paginate(4);
         return view('news.index', ['news' => $news]);
     }
 
     public function show($id)
     {
-        $news = News::findOrFail($id);
+        $news = News::with('user', 'teams')->findOrFail($id);
         return view('news.show', ['news' => $news]);
     }
 }
